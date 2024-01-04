@@ -1,0 +1,49 @@
+.modal-address {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+}
+
+.modal-container {
+    position: fixed;
+    max-width: 600px;
+    top: 15%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 20px 2em;
+    background-color: #FFF;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px 1px white;
+}
+
+.close {
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.modal-container input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.modal-container button {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+}
+
+.modal-container button:active {
+    box-shadow: 1px 1px 20px 1px green;
+}

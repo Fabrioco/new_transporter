@@ -1,0 +1,84 @@
+.container-password {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container-password img {
+    width: 600px;
+    margin-right: 500px;
+}
+
+.form-password {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    padding: 50px 25px;
+    border-radius: 15px;
+}
+
+.form-password p {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.form-password input {
+    width: 200px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.form-password button {
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.form-password button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.link-reset {
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.link-reset:hover {
+    color: blue;
+}
+
+/* MOBILE  */
+
+@media screen and (max-width: 1640px) {
+    .container-password {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    .container-password img {
+        margin-right: 0;
+        width: 300px;
+    }
+
+    .form-password {
+        margin-top: 50px;
+        height: 250px;
+        width: 150px;
+    }
+    .form-password input {
+        width: 80%;
+    }
+}

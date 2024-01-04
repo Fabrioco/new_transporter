@@ -1,0 +1,78 @@
+.main-mail {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 25px;
+    margin-bottom: 70px;
+}
+
+.title-mail {
+    color: black;
+    margin: 30px 0 50px 0;
+    font-size: 50px;
+    border: 3px solid black;
+    padding: 5px 60px;
+}
+
+.main-products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.product {
+    width: 200px;
+    height: 270px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(242, 241, 241);
+    transition: cubic-bezier(0.86, 0, 0.07, 1) 0.3s;
+}
+
+.product:hover {
+    box-shadow: 1px 1px 10px 1px gray;
+    width: 220px;
+    height: 280px;
+}
+
+.main-products div img {
+    width: 100px;
+    height: 150px;
+}
+
+.main-products div button {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* MOBILE*/
+
+@media screen and (max-width: 756px){
+    .main-mail{
+        width: 95%;
+    }
+
+    .main-products {
+        flex-direction: column;
+        width: 100%;
+    }
+}

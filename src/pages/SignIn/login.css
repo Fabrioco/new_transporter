@@ -1,0 +1,95 @@
+.container {
+    width: 100%;
+    
+}
+
+.container-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg-login {
+    margin-right: 100px;
+    width: 500px;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    height: 400px;
+    width: 350px;
+    background-color: white;
+    border-radius: 10px 0;
+    box-shadow: 1px 1px 5px 7px rgba(128, 128, 128, 0.353);
+}
+
+.form-login h1 {
+    color: black;
+    margin-bottom: 15px;
+}
+
+.form-login form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-login input {
+    width: 200px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    color: black;
+}
+
+
+.form-login button {
+    font-size: 24px;
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.form-login button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.forget-pass, .register-log {
+    color: black;
+    font-weight: 600;
+}
+
+.forget-pass:hover, .register-log:hover {
+    color: blue;
+}
+
+.form-login p {
+    color: black;
+    margin-top: 5px;
+}
+
+
+/*   MOBILE   */
+
+@media screen and (max-width: 1052px) {
+    .container-login {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .svg-login {
+        margin-right: 0;
+        width: 300px;
+    }
+    .container {
+        width: 100%;
+    }
+}

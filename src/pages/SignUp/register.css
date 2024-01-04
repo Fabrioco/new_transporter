@@ -1,0 +1,108 @@
+.container-register {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-register img {
+    width: 500px;
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 450px;
+    background-color: white;
+    border-radius: 20px 0;
+    box-shadow: 1px 1px 10px 3px rgba(255, 255, 255, 0.623);
+}
+
+.form-register h1 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.form-register form {
+    display: flex;
+    flex-direction: row;
+    max-width: 370px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.form-register input {
+    width: 150px;
+    height: 20px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.form-register button {
+    background-color: black;
+    padding: 10px 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.form-register button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    box-shadow: 1px 3px 10px 1px rgba(0, 0, 0, 0.426);
+}
+
+.option-register {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-register p {
+    margin-top: 15px;
+}
+
+#link-back {
+    font-weight: 600;
+    color: black;
+}
+
+#link-back:hover {
+    color: blue;
+}
+
+.option-register i {
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+/*   MOBILE   */
+
+@media screen and (max-width:1052px) {
+    .container-register {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-register img {
+        display: none;
+    }
+
+    .form-register {
+        width: 60%;
+        height: auto;
+        margin-top: 50px;
+        box-shadow: none;
+    }
+
+    .form-register form {
+        align-items: center;
+        justify-content: center;
+    }
+}

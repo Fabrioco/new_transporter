@@ -4,13 +4,8 @@ import "./mail.css";
 export default function Mail() {
   function handleAdd(nomeProduto) {
     toast.success("Item adicionado com sucesso")
-    // Obtém o array de produtos do localStorage ou cria um novo se não existir
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-    // Adiciona o novo produto ao array
     carrinho.push(nomeProduto);
-
-    // Salva o array atualizado no localStorage
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
   }
 

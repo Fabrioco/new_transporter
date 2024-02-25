@@ -58,17 +58,19 @@ export default function Cart() {
             )}
           </ul>
         </div>
-        <button
-          className="btnCart"
-          id="finishCart"
-          style={{ marginBottom: "10px" }}
-          onClick={finishBuy}
-        >
-          Finalizar compra
-        </button>
-        <button className="btnCart" onClick={backMail}>
-          Voltar
-        </button>
+        <div className="content__btns">
+          <button
+            className="btnCart"
+            id="finishCart"
+            style={{ marginBottom: "10px" }}
+            onClick={finishBuy}
+          >
+            Finalizar compra
+          </button>
+          <button className="btnCart" onClick={backMail}>
+            Voltar
+          </button>
+        </div>
       </div>
     </div>
   );

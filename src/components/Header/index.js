@@ -1,35 +1,33 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-import "./header.css"
+import "./header.css";
 
-import Sidebar from '../../components/Sidebar/index';
+import Sidebar from "../../components/Sidebar/index";
 
-import { CgLayoutList } from 'react-icons/cg'
-
-
+import { CgLayoutList } from "react-icons/cg";
 
 export default function Header() {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-    const [isSidebarOpen, setSidebarOpen] = useState(false);
+  function toggleSidebar() {
+    setSidebarOpen(!isSidebarOpen);
+  }
 
-    function toggleSidebar() {
-        setSidebarOpen(!isSidebarOpen);
-    }
+  return (
+    <div className="container__sidebar">
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <Link to="/" className="title-header">
+        Transportadora Lopes
+      </Link>
 
-    return (
-        <div>
-            <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-            <header className="container">
-                <Link to='/' className="title-header">Transportadora Lopes</Link>
-
-            </header>
-            <CgLayoutList
-                size={50}
-                color='white'
-                style={{ cursor: 'pointer', margin: "auto 0 " }}
-                onClick={toggleSidebar}
-            />
-        </div>
-    )
+      <CgLayoutList
+        className="openSidebar"
+        size={50}
+        color="#fff"
+        style={{ cursor: "pointer", margin: "auto 0 " }}
+        onClick={toggleSidebar}
+      />
+    </div>
+  );
 }

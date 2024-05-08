@@ -21,13 +21,15 @@ export default function Header() {
         Transportadora Lopes
       </Link>
 
-      <CgLayoutList
-        className="openSidebar"
-        size={50}
-        color="#fff"
-        style={{ cursor: "pointer", margin: "auto 0 " }}
-        onClick={toggleSidebar}
-      />
+      {!isSidebarOpen && (
+        <CgLayoutList
+          className="openSidebar"
+          size={50}
+          color="#fff"
+          style={{ cursor: "pointer", margin: "auto 0 " }}
+          onClick={toggleSidebar}
+        />
+      )}
     </div>
   );
 }

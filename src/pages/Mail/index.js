@@ -2,12 +2,12 @@ import { toast } from "react-toastify";
 import "./mail.css";
 
 export default function Mail() {
-  function handleAdd(nomeProduto) {
-    toast.success("Item adicionado com sucesso")
+  const handleAdd = (nomeProduto) => {
+    toast.success("Item adicionado com sucesso");
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     carrinho.push(nomeProduto);
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
-  }
+  };
 
   return (
     <div>

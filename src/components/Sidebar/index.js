@@ -6,7 +6,7 @@ import "./sidebar.css";
 import { Link } from "react-router-dom";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
-  const { signed, user, logout } = useContext(AuthContext);
+  const { signed, logout } = useContext(AuthContext);
 
   var dataUser = JSON.parse(localStorage.getItem("@ticketsPRO"));
   return (
@@ -14,7 +14,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       <FiX
         style={{ cursor: "pointer", marginLeft: "80%", color: "black" }}
         size={50}
-        className="close-sidebar"
         onClick={toggleSidebar}
       />
       {!signed ? (
@@ -40,12 +39,18 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         </nav>
       ) : (
         <>
-          <nav style={{ display: "flex", flexDirection: "column" }}>
+          <nav
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              margin: "40px 0",
+            }}
+          >
             <p>Olá, {dataUser.nome}</p>
             <Link to="/" className="link">
               Início
             </Link>
-            
+
             <Link to="/mail" className="link">
               Loja
             </Link>
@@ -65,9 +70,10 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               Sua opinião
             </Link>
           </nav>
-          <footer>
+
+          <div className="btn_logout">
             <button onClick={() => logout()}>Sair</button>
-          </footer>
+          </div>
         </>
       )}
     </div>

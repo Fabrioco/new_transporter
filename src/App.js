@@ -13,7 +13,6 @@ function App() {
                 <ToastContainer autoClose={3000} />
                 <RouterApp />
             </AuthProvider>
-
         </BrowserRouter>
     );
 }

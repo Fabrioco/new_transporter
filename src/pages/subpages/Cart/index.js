@@ -11,7 +11,11 @@ export default function Cart() {
   }
 
   function finishBuy() {
-    toast.success("Compra realizada com sucesso");
+    if (items.length > 0) {
+      toast.success("Compra realizada com sucesso");
+    } else {
+      toast.error("Carrinho está vazio, adicione algo para comprar")
+    }
   }
 
   useEffect(() => {

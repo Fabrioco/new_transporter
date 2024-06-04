@@ -16,8 +16,6 @@ function AuthProvider({ children }) {
 
     const navigate = useNavigate();
 
-
-
     function toggleSidebar() {
         setSidebarOpen(!isSidebarOpen);
     }
@@ -35,7 +33,6 @@ function AuthProvider({ children }) {
         loadUser();
     }, [])
 
-    //Fazer login
     async function signIn(email, password) {
         setLoadingAuth(true);
 
@@ -70,8 +67,6 @@ function AuthProvider({ children }) {
 
     }
 
-
-    // Cadastrar um novo user
     async function signUp(email, password, name, address, number, date, gender) {
         setLoadingAuth(true);
 
@@ -135,11 +130,9 @@ function AuthProvider({ children }) {
             const userUid = user.uid;
             const docRef = doc(db, 'users', userUid);
 
-            // Verifica se o documento existe antes de tentar atualizá-lo
             const docSnapshot = await getDoc(docRef);
 
             if (docSnapshot.exists()) {
-                // O documento existe, então podemos tentar atualizá-lo
                 await updateDoc(docRef, { address: "", number: "" });
                 console.log('Documento atualizado com sucesso.');
             } else {
@@ -171,7 +164,6 @@ function AuthProvider({ children }) {
         const userUid = user.uid;
         const docRef = doc(db, 'users', userUid);
 
-        // Verifica se o documento existe antes de tentar atualizá-lo
         const docSnapshot = await getDoc(docRef);
     }
 

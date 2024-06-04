@@ -1,5 +1,5 @@
 import { FiX } from "react-icons/fi";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import { AuthContext } from "../../contexts/auth";
 import "./sidebar.css";
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const { signed, logout } = useContext(AuthContext);
 
-  var dataUser = JSON.parse(localStorage.getItem("@ticketsPRO"));
+  const dataUser = JSON.parse(localStorage.getItem("@ticketsPRO"));
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
       <FiX

@@ -5,26 +5,39 @@ import { useEffect, useState } from "react";
 
 export default function Cart() {
   const [items, setItems] = useState([]);
+
   const navigate = useNavigate();
   function backMail() {
     navigate("/mail");
   }
 
   function finishBuy() {
-    toast.success("Compra realizada com sucesso");
+    const carrinho = localStorage.getItem("@ticketsPRO");
+    const user = JSON.parse(carrinho);
+    const address = user.address;
+    const number = user.number;
+
+    if (items.length == 0) {
+      toast.error("Por favor, adicione algo ao seu carrinho!");
+    } else {
+      localStorage.removeItem("carrinho");
+      toast.success(
+        `Compra finalizado, enviaramos para ${address} N ${number}`
+      );
+    }
   }
 
   useEffect(() => {
-    function loadItems() {
+    const loadItems = () => {
       const carrinho = localStorage.getItem("carrinho");
       if (carrinho) {
         setItems(JSON.parse(carrinho));
       } else {
         setItems([]);
       }
-    }
+    };
     loadItems();
-  }, []);
+  }, [items]);
 
   function handleClear(index) {
     const novosItens = [...items];
@@ -41,23 +54,21 @@ export default function Cart() {
     <div className="allCart">
       <h1>Carrinho</h1>
       <div className="content-cart">
-        <div>
-          <ul>
-            {items.length > 0 ? (
-              items.map((item, index) => (
-                <li key={index}>
-                  {item}{" "}
-                  <button onClick={() => handleClear(index)}>Excluir</button>
-                </li>
-              ))
-            ) : (
-              <p>
-                Infelizmente você ainda não adicionou nada no carrinho. Volte a
-                loja e adicione
-              </p>
-            )}
-          </ul>
-        </div>
+        {items.length > 0 ? (
+          items.map((item, index) => (
+            <div className="item-cart" key={index}>
+              <img src={item[1]} alt={item[0]} />
+              <h3>{item[0]}</h3>
+              <button onClick={() => handleClear(index)}>Excluir</button>
+            </div>
+          ))
+        ) : (
+          <p>
+            Infelizmente você ainda não adicionou nada no carrinho. Volte a loja
+            e adicione
+          </p>
+        )}
+
         <div className="content__btns">
           <button
             className="btnCart"
